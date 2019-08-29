@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_margin_small"
+        app:cardUseCompatPadding="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_margin_normal">
+
+            <TextView
+                android:id="@+id/nameTextView"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.name}"
+                android:textStyle="bold"
+                tools:text="Recipe Name" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_xsmall"
+                android:text="@{item.shortDescription}"
+                tools:text="Recipe Description" />
+
+            <TextView
+                android:id="@+id/timeTextView"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_xsmall"
+                android:drawableStart="@drawable/ic_timer"
+                android:gravity="center_vertical"
+                android:text="@{item.displayTime()}"
+                tools:text="Recipe Time" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.a3cha.proegg.data.local.model.Recipe" />
+    </data>
+
+</layout>
