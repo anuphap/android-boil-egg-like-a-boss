@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Pro Egg</string>
+
+    <!-- Timer -->
+    <string name="stop">หยุด</string>
+    <string name="label_recipe_detail">ประเภท: %s</string>
+    <string name="button_start_timer">เริ่มจับเวลา</string>
+    <string name="button_reset_timer">รีเซต</string>
 </resources>

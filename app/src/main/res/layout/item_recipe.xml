@@ -3,10 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <import type="com.a3cha.proegg.view.detail.DetailActivity"/>
+
+        <variable
+            name="item"
+            type="com.a3cha.proegg.data.local.model.Recipe" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/padding_margin_small"
+        android:onClick="@{() -> DetailActivity.startActivity(context, item.id)}"
         app:cardUseCompatPadding="true">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -47,12 +60,5 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.cardview.widget.CardView>
-
-    <data>
-
-        <variable
-            name="item"
-            type="com.a3cha.proegg.data.local.model.Recipe" />
-    </data>
 
 </layout>

@@ -1,4 +1,4 @@
-package com.a3cha.proegg.view
+package com.a3cha.proegg.view.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@ import com.a3cha.proegg.R
 import com.a3cha.proegg.data.RecipeRepository
 import com.a3cha.proegg.data.local.LocalDatabase
 import com.a3cha.proegg.databinding.ActivityMainBinding
-import com.a3cha.proegg.view.adapter.RecipeAdapter
+import com.a3cha.proegg.view.main.adapter.RecipeAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModelFactory: MainViewModelFactory
@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModelFactory = MainViewModelFactory(RecipeRepository.getInstance(LocalDatabase.getInstance(this)))
+        viewModelFactory = MainViewModelFactory(
+            RecipeRepository.getInstance(LocalDatabase.getInstance(this))
+        )
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
 
         setupData()

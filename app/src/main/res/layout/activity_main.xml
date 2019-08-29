@@ -6,7 +6,7 @@
 
         <variable
             name="recipeAdapter"
-            type="com.a3cha.proegg.view.adapter.RecipeAdapter" />
+            type="com.a3cha.proegg.view.main.adapter.RecipeAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

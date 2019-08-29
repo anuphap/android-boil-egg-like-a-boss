@@ -18,4 +18,8 @@ class RecipeRepository(private val localDatabase: LocalDatabase) {
 
     val recipes: LiveData<List<Recipe>>
         get() = localDatabase.dataDao().getRecipes()
+
+    fun getRecipe(id: String): LiveData<Recipe> {
+        return localDatabase.dataDao().getRecipe(id)
+    }
 }

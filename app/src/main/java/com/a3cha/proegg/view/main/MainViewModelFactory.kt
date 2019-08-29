@@ -1,4 +1,4 @@
-package com.a3cha.proegg.view
+package com.a3cha.proegg.view.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

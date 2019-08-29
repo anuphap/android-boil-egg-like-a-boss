@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.detail.DetailActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/actionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_margin_xlarge"
+            android:onClick="@{onClickStartTimer}"
+            android:text="@{timerStarted? @string/button_reset_timer :  @string/button_start_timer}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/button_start_timer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/decriptionTextView"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_margin_normal"
+            android:text="@{recipe.longDescription}"
+            app:layout_constraintTop_toBottomOf="@+id/typeLabelTextView"
+            tools:text="Label" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/typeLabelTextView"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_margin_normal"
+            android:text="@{recipe.name}"
+            app:layout_constraintTop_toBottomOf="@+id/timerView"
+            tools:text="Label" />
+
+        <com.a3cha.proegg.widget.TimerView
+            android:id="@+id/timerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxTime="@{recipe.time}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="onClickStartTimer"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="detailViewModel"
+            type="com.a3cha.proegg.view.detail.DetailViewModel" />
+
+        <variable
+            name="recipe"
+            type="com.a3cha.proegg.data.local.model.Recipe" />
+
+        <variable
+            name="timerStarted"
+            type="Boolean" />
+    </data>
+</layout>

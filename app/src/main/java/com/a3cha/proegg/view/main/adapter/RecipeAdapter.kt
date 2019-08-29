@@ -1,4 +1,4 @@
-package com.a3cha.proegg.view.adapter
+package com.a3cha.proegg.view.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -33,6 +33,7 @@ class RecipeAdapter : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
         fun bind(recipe: Recipe) {
             dataBinding.item = recipe
+            dataBinding.context = itemView.context
             dataBinding.executePendingBindings() // update view
         }
     }

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="padding_margin_xsmall">4dp</dimen>
     <dimen name="padding_margin_small">8dp</dimen>
     <dimen name="padding_margin_normal">16dp</dimen>
-    <dimen name="padding_margin_xsmall">4dp</dimen>
+    <dimen name="padding_margin_large">24dp</dimen>
+    <dimen name="padding_margin_xlarge">32dp</dimen>
+    <dimen name="padding_margin_xxlarge">40dp</dimen>
+
+    <dimen name="widget_timer_progress_size">200dp</dimen>
 </resources>
